@@ -12,10 +12,13 @@ const app = express();
 // Middlewares
 
 app.use(cors({
-  origin: "https://bellcorp-event-project.netlify.app",
+  origin: [
+    "http://localhost:3000",
+    "https://bellcorp-event-manage-app.netlify.app/"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
-})); // allow frontend requests
+}));; // allow frontend requests
 
 app.use(express.json()); // parse JSON data
 
