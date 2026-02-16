@@ -10,8 +10,15 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors()); // allow frontend requests
+
+app.use(cors({
+  origin: "https://bellcorp-event-project.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+})); // allow frontend requests
+
 app.use(express.json()); // parse JSON data
+
 
 // Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI)
