@@ -4,7 +4,8 @@ import axios from "axios";
 
 // Create axios instance
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  // baseURL: "http://localhost:5000/api",
+  baseURL: "https://event-management-bellcorp-1.onrender.com/api",
 });
 
 // Add token to headers
